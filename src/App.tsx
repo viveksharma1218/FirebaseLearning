@@ -1,6 +1,7 @@
 import {getDatabase , ref , set } from "firebase/database";
 import {app} from  "./firebase.tsx";
-import SignUpPage from "./signUp.tsx"
+import SignUpPage from "./Pages/signUp.tsx"
+import SignInPage from "./Pages/signIn.tsx";
 import './App.css'
 //instance for realtimedatabase
 const db = getDatabase(app);
@@ -16,9 +17,12 @@ function App() {
   };
   return (
     <>
-    <h1>Firebae Leaning </h1>
+    <h1>Firebase Learning </h1>
     <button onClick={sendData}>sendData</button>
+    <br/>
+    <h2 style={{margin:'3rem',marginBottom:'0'}} >Firebase Authentication with Email</h2>
     <SignUpPage></SignUpPage>
+    <SignInPage></SignInPage>
     </>
   )
 }
