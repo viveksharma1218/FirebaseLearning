@@ -7,7 +7,8 @@ const firebaseConfig = {
   projectId: "app-8ea54",
   storageBucket: "app-8ea54.firebasestorage.app",
   messagingSenderId: "914342466661",
-  appId: "1:914342466661:web:067ef1855df9c5690da28c"
+  appId: "1:914342466661:web:067ef1855df9c5690da28c",
+  databaseUrl : "https://app-8ea54-default-rtdb.firebaseio.com/"
 };
 
-const app = initializeApp(firebaseConfig);
+export const app = initializeApp(firebaseConfig);
