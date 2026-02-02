@@ -4,6 +4,7 @@ import SignUpPage from "./Pages/signUp.tsx"
 import SignInPage from "./Pages/signIn.tsx";
 import './App.css';
 import Senddata from "./Pages/sendData.tsx";
+import GoogleSignIn from "./Pages/googleSignIn.tsx";
 //instance for realtimedatabase
 //const db = getDatabase(app);
 
@@ -25,6 +26,7 @@ function App() {
     <SignUpPage></SignUpPage>
     <SignInPage></SignInPage>
     <Senddata></Senddata>
+    <GoogleSignIn></GoogleSignIn>
     </>
   )
 }
