@@ -1,19 +1,22 @@
 import { useState } from "react";
-import {getAuth,createUserWithEmailAndPassword} from "firebase/auth";
-import {app} from "../firebase.tsx";
+import { useFirebase } from "../context/FirebaseContext.tsx";
+// import {getAuth,createUserWithEmailAndPassword} from "firebase/auth";
+// import {app} from "../firebase.tsx";
 
-
-const auth =getAuth(app);
+//const auth =getAuth(app);
 function SignUpPage (){
   const [email , setEmail ]  = useState('');
   const [password , setPassword] = useState('');
 
-  const createUser = ()=>{
-    createUserWithEmailAndPassword(auth , email , password).then((res)=>{
-      alert('User Created Successfully!');
-      console.log(res);
-    })
-  }
+  const firebase = useFirebase();
+  //console.log(firebase);
+
+  // const createUser = ()=>{
+  //   createUserWithEmailAndPassword(auth , email , password).then((res)=>{
+  //     alert('User Created Successfully!');
+  //     console.log(res);
+  //   })
+  // }
     
   return(
     <div style={{margin:' 3rem',display:'inline-block', border:'1px solid black',padding:'3rem',width:'30vw',borderRadius:'2rem'}}>
@@ -22,7 +25,7 @@ function SignUpPage (){
       <br/><br/>
       <input  value={password} onChange={(e)=>{setPassword(e.target.value)}} placeholder="write your password" />
       <br/>
-      <button onClick={createUser}>SignUp</button>
+      <button onClick={()=>{firebase.userSignUp(email,password)}}>SignUp</button>
       <p>Learning firebase Authentication with email(signup)</p>
     </div>
 
