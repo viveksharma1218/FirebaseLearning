@@ -6,6 +6,7 @@ button{
   border:none;
   color:white;
   border-radius: .5rem;
+  margin:2rem;
 }
 button:hover{
   background-color:rgb(62, 62, 120);
@@ -15,4 +16,12 @@ button:hover{
 button:active{
   background-color:rgb(92, 92, 163);
   box-shadow: none;
+}
+input{
+  width:400px;
+  height:2rem;
+  font-size:1rem;
+  border:none;
+  border-radius: .5rem;
+  background-color: aliceblue;
 }
