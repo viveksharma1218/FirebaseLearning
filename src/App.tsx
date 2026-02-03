@@ -11,6 +11,8 @@ import GoogleSignIn from "./Pages/googleSignIn.tsx";
 import { getAuth,onAuthStateChanged,signOut } from "firebase/auth";
 import { useEffect, useState } from "react";
 
+import FireStoreDatabase from "./Pages/FirestoreDatabase.tsx"
+
 const auth = getAuth(app);
 
 function App() {
@@ -47,6 +49,7 @@ function App() {
     <SignInPage></SignInPage>
     <Senddata></Senddata>
     <GoogleSignIn></GoogleSignIn>
+    <FireStoreDatabase></FireStoreDatabase>
     </>
   )
   }
@@ -55,6 +58,7 @@ function App() {
     <div>
       <h1>Welcome User of this email Id : {user && user.email}</h1>
       <button onClick={()=>{signOut(auth)}}>Sign Out</button>
+      <FireStoreDatabase></FireStoreDatabase>
     </div>
    ) 
   }
